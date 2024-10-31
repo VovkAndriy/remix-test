@@ -40,10 +40,10 @@ export const ProductsTable = ({data}: {data: ApiProduct[]; isLoading: boolean}) 
       {id: item.productId},
       {
         onSuccess: async result => {
-          result?.meta?.message && enqueueSnackbar(result?.meta?.message, {variant: 'success'});
+          result?.meta?.message && enqueueSnackbar(result?.meta?.message, {variant: 'success' as unknown as undefined});
         },
         onError: err => {
-          enqueueSnackbar(err?.message || 'unknown error', {variant: 'error'});
+          enqueueSnackbar(err?.message || 'unknown error', {variant: 'error' as unknown as undefined});
         },
       },
     );
