@@ -80,7 +80,7 @@ export const ProductsForm = () => {
             name="quantity"
             label={t('products:quantity')}
             variant="filled"
-            type="tel"
+            type="number"
             sx={{flex: 1}}
           />
         </Grid2>
@@ -90,7 +90,7 @@ export const ProductsForm = () => {
             name="price"
             label={t('products:price')}
             variant="filled"
-            type="tel"
+            type="number"
             sx={{flex: 1}}
             slotProps={{
               input: {
@@ -103,7 +103,7 @@ export const ProductsForm = () => {
             name="priceSale"
             label={t('products:priceSale')}
             variant="filled"
-            type="tel"
+            type="number"
             sx={{flex: 1}}
             slotProps={{
               input: {

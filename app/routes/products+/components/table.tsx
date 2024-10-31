@@ -1,14 +1,14 @@
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSnackbar } from 'notistack';
 import { formatRelative } from 'date-fns';
-
 import {
   Box,
   Button,
   Card,
   CardContent,
   CardMedia,
-  Grid,
+  Grid2,
   Paper,
   Stack,
   Table,
@@ -27,7 +27,11 @@ import { useMutationProductsDelete } from '~/services/products';
 import { AppButton } from '~/global/components/app-button';
 import { ApiProduct } from '~/api-client/types';
 
-export const ProductsTable = ({ data, isLoading }: { data: ApiProduct[], isLoading: boolean }) => {
+interface IProps {
+  data: ApiProduct[],
+  isLoading?: boolean
+}
+export const ProductsTable: React.FC<IProps> = ({ data, isLoading }) => {
   const { t } = useTranslation(['products', 'common']);
   const { enqueueSnackbar } = useSnackbar();
   const theme = useTheme();
@@ -56,13 +60,13 @@ export const ProductsTable = ({ data, isLoading }: { data: ApiProduct[], isLoadi
   return (
     <>
       {isMobile ? (
-        <Grid container spacing={2}>
+        <Grid2 container spacing={2}>
           {data.map((row) => (
-            <Grid item xs={12} key={row.productId}>
+            <Grid2 size={12} key={row.productId}>
               <ProductCard row={row} doDeleteItem={doDeleteItem} />
-            </Grid>
+            </Grid2>
           ))}
-        </Grid>
+        </Grid2>
       ) : (
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }}>
